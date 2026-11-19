@@ -1,47 +1,61 @@
 # EasyBitX40
 
-A reference archive for the **Easy BITX** mono-band HF SSB transceiver, with emphasis on the 40-meter version. It brings together Arduino VFO/BFO firmware, circuit schematics, PCB drawings, a bill of materials, and links to supporting documentation.
+Reference archive for the **Easy BITX** mono-band HF SSB amateur radio transceiver, with an emphasis on the 40-meter version. The repository brings together Arduino VFO/BFO firmware, construction documentation, circuit and PCB drawings, and a bill of materials.
 
-This is an independent archive and is not an official INKITS release.
+This is an independent archive, not an official INKITS release.
 
-**Acknowledgement:** The hardware documentation in this archive was kindly shared by **Saquib Ahmed**.
+## Contents
 
-## Repository contents
-
-| Location | Contents |
+| Section | Description |
 | --- | --- |
-| [firmware/EasyBitx_v1.3.ino](firmware/EasyBitx_v1.3.ino) | Easy BITX VFO/BFO firmware v1.3, from the VU3SUA repository |
-| [firmware/EasyBitx_vu3gao_v1.5.ino](firmware/EasyBitx_vu3gao_v1.5.ino) | VU3GAO VFO/BFO firmware v1.5 |
-| [hardware/FULL SCH.pdf](hardware/FULL%20SCH.pdf) | Complete Easy BITX Version 2.0 schematic drawing |
-| [hardware/FULL PCB.pdf](hardware/FULL%20PCB.pdf) | Complete Easy BITX Version 2.0 PCB drawing |
-| [hardware/](hardware/) | Individual schematic and PCB drawings, sections 1–7 |
-| [hardware/BOM.xlsx](hardware/BOM.xlsx) | Bill of materials |
-| [docs/SOURCES.md](docs/SOURCES.md) | Original documentation links and source references |
-| [scripts/fetch_sources.py](scripts/fetch_sources.py) | Optional helper for retrieving linked documentation |
+| [Documentation](docs/README.md) | Construction manual, coils, AGC, voltage readings, and enclosure notes |
+| [Hardware](hardware/README.md) | Easy BITX Version 2.0 schematic and PCB reference drawings, and component BOM |
+| [Firmware v1.3](firmware/EasyBitx_v1.3.ino) | Arduino Nano / Si5351 VFO/BFO sketch hosted by VU3SUA |
+| [Firmware v1.5](firmware/EasyBitx_vu3gao_v1.5.ino) | VU3GAO's later VFO/BFO sketch |
+| [Sources](docs/SOURCES.md) | Source repositories, external references, and provenance |
+| [Retrieval script](scripts/fetch_sources.py) | Optional utility for retrieving upstream files |
 
-The PCB PDFs are reference drawings, **not** verified editable CAD design files or manufacturing Gerbers.
+## Construction documentation
 
-## Firmware and hardware
+The documents below are available directly in this repository:
 
-The Easy BITX control system uses an **Arduino Nano** and **Si5351** clock generator for VFO/BFO generation, together with a 16×2 LCD and rotary encoder. The firmware source describes a 10 MHz intermediate frequency.
+| Document | File |
+| --- | --- |
+| Easy BITX Version 1 construction manual | [Building-Easy-Bitx-Ver-1.pdf](docs/Building-Easy-Bitx-Ver-1.pdf) |
+| Coil reference | [Easy-Bitx-Coils.pdf](docs/Easy-Bitx-Coils.pdf) |
+| Automatic gain control (AGC) reference | [AGC.pdf](docs/AGC.pdf) |
+| Voltage readings | [Voltage-Readings.pdf](docs/Voltage-Readings.pdf) |
+| Boxing / enclosure reference | [Boxing-Easy-Bitx.pdf](docs/Boxing-Easy-Bitx.pdf) |
 
-Two firmware versions are included:
+See the [documentation index](docs/README.md) for a complete directory guide.
 
-- **v1.3:** From the [VU3SUA repository](https://github.com/vu3sua/EasyBitx_v1.3), with source credit to Nitin William (VU3GAO). The code includes a 40-meter tuning range of 7.000–7.300 MHz.
-- **v1.5:** From the [VU3GAO repository](https://github.com/saqks-ahm/Easy_Bitx_Mono_Band), adding features including EEPROM support and S-meter functionality.
+## Hardware
 
-Hardware revisions and firmware versions may differ in their wiring, oscillator settings and other configuration details. Verify compatibility with the actual board before programming the Arduino or operating the radio.
+The [hardware directory](hardware/README.md) contains:
 
-## Additional documentation
+- A complete Easy BITX Version 2.0 circuit schematic and seven individual schematic sections
+- A complete PCB drawing and seven individual PCB drawing sections
+- A bill of materials in Excel format
 
-- [Easy BITX Version 1 construction manual](https://amateurradiokits.in/wp-content/uploads/2020/04/Building-Easy-Bitx-Ver-1.pdf)
-- [Easy BITX firmware and calibration guide](https://amateurradiokits.in/wp-content/uploads/2021/10/Easy_BITX_Firmware_vu3gao.pdf)
-- [Easy BITX coil winding guide](https://amateurradiokits.in/wp-content/uploads/2021/09/Easy-Bitx-Coils1.pdf)
+The schematic and PCB PDFs are **reference drawings**, not verified native CAD source files or PCB-manufacturing Gerbers. The Version 1 construction manual and Version 2.0 hardware drawings are identified separately because their circuit details may differ.
 
-The linked Version 1 construction manual is not necessarily applicable to the Version 2.0 PCB drawings included here.
+## Firmware
 
-## Credits and licensing
+Both included sketches describe an **Arduino Nano** and **Si5351** VFO/BFO arrangement using a 16×2 character LCD, rotary encoder, and 10 MHz IF.
 
-Easy BITX kit and hardware design: **INKITS / Sunil Lakhani (VU3SUA)**. **Hardware documentation shared by Saquib Ahmed.** Firmware: **Nitin William (VU3GAO)**, with acknowledgement of earlier work by J. CesarSound as described in the source code.
+- **v1.3** — [original source](https://github.com/vu3sua/EasyBitx_v1.3), credits Nitin William (VU3GAO), with a 7.000–7.300 MHz 40-meter tuning range.
+- **v1.5** — [original source](https://github.com/saqks-ahm/Easy_Bitx_Mono_Band), with additional firmware functionality, including EEPROM and S-meter-related features.
 
-The upstream v1.5 firmware repository includes the [GNU GPL-3.0 license](firmware/LICENSE). The VU3SUA v1.3 repository does not declare a separate license. Licensing for third-party documentation and hardware drawings should not be inferred from the firmware license. All original author notices are retained.
+Check the board revision, pin connections, IF/BFO frequencies, and calibration settings before using either sketch with a particular board.
+
+## Acknowledgements
+
+- **Sunil Lakhani (VU3SUA) / INKITS** — Easy BITX kit and hardware design
+- **Nitin William (VU3GAO)** — Easy BITX firmware, which also credits earlier work by J. CesarSound
+- **Saquib Ahmed** — kindly shared the hardware documentation archived here
+
+Thanks to the original contributors for making these materials available to the amateur radio community.
+
+## Licensing
+
+The v1.5 upstream firmware includes a [GNU GPL-3.0 license](firmware/LICENSE). The v1.3 upstream repository does not explicitly declare a license. Do not assume the firmware license also covers schematic drawings, PCB artwork, construction manuals, or other third-party materials. Original attributions remain with the respective authors.
