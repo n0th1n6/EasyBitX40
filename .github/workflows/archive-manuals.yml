@@ -1,0 +1,45 @@
+name: Archive Easy BITX PDF manuals
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/archive-manuals.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Download original PDF manuals
+        run: python3 scripts/fetch_sources.py
+      - name: Verify expected manuals
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          expected = [
+              "Building-Easy-Bitx-Ver-1.pdf",
+              "Easy_BITX_Firmware_vu3gao.pdf",
+              "Easy-Bitx-Coils1.pdf",
+          ]
+          missing = []
+          for name in expected:
+              p = Path("docs/downloaded") / name
+              if not p.exists() or not p.read_bytes().startswith(b"%PDF"):
+                  missing.append(name)
+          if missing:
+              raise SystemExit("PDF download failed: " + ", ".join(missing))
+          PY
+      - name: Commit verified PDF manuals
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f docs/downloaded/*.pdf
+          if ! git diff --cached --quiet; then
+            git commit -m "Archive original Easy BITX PDF manuals"
+            git push
+          fi
