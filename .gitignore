@@ -3,3 +3,4 @@ docs/downloaded/
 *.elf
 *.o
 .DS_Store
+firmware/upstream-local/
