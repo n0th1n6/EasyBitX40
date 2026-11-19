@@ -2,6 +2,8 @@
 
 This directory contains Easy BITX Version 2.0 circuit and PCB reference drawings and a component list.
 
+**Acknowledgement:** These hardware documentation files were generously shared by **Saquib Ahmed**. This acknowledges the source of the shared copies; original design credit remains with the respective creators.
+
 | File | Description |
 | --- | --- |
 | [FULL SCH.pdf](FULL%20SCH.pdf) | Complete schematic drawing |

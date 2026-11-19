@@ -4,6 +4,8 @@ A reference archive for the **Easy BITX** mono-band HF SSB transceiver, with emp
 
 This is an independent archive and is not an official INKITS release.
 
+**Acknowledgement:** The hardware documentation in this archive was kindly shared by **Saquib Ahmed**.
+
 ## Repository contents
 
 | Location | Contents |
@@ -40,6 +42,6 @@ The linked Version 1 construction manual is not necessarily applicable to the Ve
 
 ## Credits and licensing
 
-Easy BITX kit and hardware documentation: **INKITS / Sunil Lakhani (VU3SUA)**. Firmware: **Nitin William (VU3GAO)**, with acknowledgement of earlier work by J. CesarSound as described in the source code.
+Easy BITX kit and hardware design: **INKITS / Sunil Lakhani (VU3SUA)**. **Hardware documentation shared by Saquib Ahmed.** Firmware: **Nitin William (VU3GAO)**, with acknowledgement of earlier work by J. CesarSound as described in the source code.
 
 The upstream v1.5 firmware repository includes the [GNU GPL-3.0 license](firmware/LICENSE). The VU3SUA v1.3 repository does not declare a separate license. Licensing for third-party documentation and hardware drawings should not be inferred from the firmware license. All original author notices are retained.

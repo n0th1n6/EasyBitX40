@@ -1,5 +1,7 @@
 # References and supporting documentation
 
+The Easy BITX Version 2.0 hardware drawings and bill of materials in this archive were shared by **Saquib Ahmed**.
+
 ## Construction and adjustment
 
 - [Easy BITX Version 1 construction manual](https://amateurradiokits.in/wp-content/uploads/2020/04/Building-Easy-Bitx-Ver-1.pdf) — construction, schematic and alignment reference.
