@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Download Easy BITX public documentation for local reference."""
+"""Download Easy BITX public documentation and optional v1.3 firmware for local reference."""
 from pathlib import Path
 from urllib.request import Request, urlopen
 
@@ -26,6 +26,23 @@ def main():
         except Exception as exc:
             print(f"Unable to download {name}: {exc}")
             print(f"  Source: {url}")
+
+    # Fetch v1.3 for local study. The upstream repository has no declared
+    # redistribution license, so the file is not committed in this archive.
+    url = "https://raw.githubusercontent.com/vu3sua/EasyBitx_v1.3/main/EasyBitx_v1.3.ino"
+    target = ROOT / "firmware" / "upstream-local" / "EasyBitx_v1.3.ino"
+    try:
+        request = Request(url, headers={"User-Agent": "Mozilla/5.0 (EasyBitX40 reference archive)"})
+        with urlopen(request, timeout=30) as response:
+            data = response.read()
+        if b"#include" not in data:
+            raise ValueError("response does not look like Arduino source")
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(data)
+        print(f"Downloaded upstream firmware for local study: {target}")
+    except Exception as exc:
+        print(f"Unable to retrieve v1.3 source: {exc}")
+        print(f"  Source: {url}")
 
 if __name__ == "__main__":
     main()
