@@ -1,11 +1,13 @@
-# Hardware design files — discovery status
+# Easy BITX Version 2.0 hardware reference
 
-Available: published Easy BITX circuit schematic diagrams inside the Version 1 construction manual, linked in `docs/SOURCES.md`.
+The uploaded archive contains a full schematic (`FULL SCH.pdf`), seven individual schematic PDFs (`SCH 1.pdf` through `SCH 7.pdf`), a full board drawing (`FULL PCB.pdf`), seven PCB drawings (`PCB 1.pdf` through `PCB 7.pdf`), and `BOM.xlsx`.
 
-**Not verified / not included:** Original editable EDA schematics, PCB source layout, manufacturing Gerbers, placement files, and complete machine-readable BOM.
+These files have been committed under this directory. The drawings are identified as Easy BITX Version 2.0. They are documentation drawings, not verified editable CAD projects or Gerber manufacturing files.
 
-Suggested future work:
-- Identify the exact Easy BITX PCB hardware revision before any redraw.
-- Recreate verified circuit nets in KiCad and cross-check against the construction manual.
-- Mark all recreated assets as community redraws, not original design files.
-- Confirm licensing before republishing third-party board artwork.
+## Firmware versions
+- [v1.3](../firmware/EasyBitx_v1.3.ino): VU3SUA-hosted firmware (source credits VU3GAO); user-supplied copy, original notice preserved. The upstream repository does not declare a license.
+- [v1.5](../firmware/EasyBitx_vu3gao_v1.5.ino): VU3GAO-hosted firmware, upstream repository contains GPL-3.0 license.
+
+Check the exact RF/control board revision, Arduino pin mapping and IF/BFO calibration before flashing firmware.
+
+All third-party materials remain attributed to the respective authors. Inclusion of design documentation does not imply an open hardware license.

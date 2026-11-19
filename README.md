@@ -39,3 +39,10 @@ The original sketch targets an Arduino Nano and Si5351 clock generator. Examine 
 Original firmware: Nitin William (VU3GAO), derived in part from earlier J. CesarSound work, per source header. Original Easy BITX kit documentation: INKITS / Sunil Lakhani (VU3SUA). Preserve original authorship notices.
 
 The firmware is distributed under the upstream GPL-3.0 license. That firmware license does **not** imply that INKITS PDFs, artwork, or unrelated hardware designs are GPL-licensed.
+
+## Additional collected materials (November 2026)
+
+- [VU3SUA EasyBitx v1.3 firmware](firmware/EasyBitx_v1.3.ino), supplied by the user and preserved with original source credits. The upstream v1.3 repository does not declare a redistribution license; GPL-3.0 of the separate v1.5 upstream is not asserted to cover it.
+- [Easy BITX Version 2.0 hardware archive](hardware/): full schematic, schematic sections 1–7, full PCB drawing, PCB sections 1–7, and the original Excel BOM. These PDFs are drawings, not editable CAD or Gerbers.
+
+Refer to [hardware/README.md](hardware/README.md) for the files and hardware/firmware compatibility notes.
